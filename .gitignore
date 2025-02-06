@@ -162,7 +162,7 @@ pip-log.txt
 .DS_Store
 
 
-/lib
+# /lib
 /esm
 node_modules
 

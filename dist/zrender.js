@@ -3533,6 +3533,12 @@
                 ? easing
                 : easingFuncs[easing] || createCubicEasingFunc(easing);
         };
+        Clip.prototype.getDelay = function () {
+            return this._delay;
+        };
+        Clip.prototype.setStartTime = function (startTime) {
+            this._startTime = startTime;
+        };
         return Clip;
     }());
 
@@ -5062,6 +5068,19 @@
             this._time = getTime();
             this._pausedTime = 0;
             this._startLoop();
+        };
+        Animation.prototype.seek = function (timestamp) {
+            this._time = getTime() - timestamp;
+            var clip = this._head;
+            while (clip) {
+                clip.loop = true;
+                clip.setStartTime(this._time + clip.getDelay());
+                clip = clip.next;
+            }
+            this._pausedTime = 0;
+            this._pauseStart = getTime();
+            this._paused = true;
+            this.update();
         };
         Animation.prototype.stop = function () {
             this._running = false;

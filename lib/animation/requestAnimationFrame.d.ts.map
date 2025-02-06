@@ -1,0 +1,1 @@
+{"version":3,"file":"requestAnimationFrame.d.ts","sourceRoot":"","sources":["../../src/animation/requestAnimationFrame.ts"],"names":[],"mappings":"AAEA,aAAK,yBAAyB,GAAG,OAAO,MAAM,CAAC,qBAAqB,CAAA;AAEpE,QAAA,IAAI,qBAAqB,EAAE,yBAAyB,CAAC;AAgBrD,eAAe,qBAAqB,CAAC"}

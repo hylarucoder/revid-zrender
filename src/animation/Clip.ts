@@ -139,4 +139,12 @@ export default class Clip {
             ? easing
             : easingFuncs[easing] || createCubicEasingFunc(easing);
     }
+
+    getDelay() {
+        return this._delay;
+    }
+
+    setStartTime(startTime: number) {
+        this._startTime = startTime;
+    }
 }
